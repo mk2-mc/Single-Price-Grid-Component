@@ -1,0 +1,148 @@
+:root {
+  --clr-primary-500: hsl(179, 47%, 51%);
+  --clr-primary-600: hsl(179, 62%, 43%);
+  
+  --clr-accent: hsl(71, 73%, 54%);
+  
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(204, 43%, 93%);
+  --clr-neutral-400: hsl(218, 22%, 67%);
+  
+  --clr-shadow: hsla(218, 22%, 67%, 30%);
+  --clr-shadow-button: hsla(0, 0%, 0%, 15%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--clr-neutral-200);
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  color: var(--clr-neutral-100);
+}
+
+h1 {
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  color: var(--clr-primary-600);
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.card-container {
+  overflow: hidden;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.5rem;
+  box-shadow: 0 1.25rem 1.25rem var(--clr-shadow);
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.subheading {
+  margin-top: 1.6rem;
+  font-size: clamp(1rem, 4vw, 1.1rem);
+  font-weight: 700;
+  color: var(--clr-accent);
+}
+
+.description {
+  margin-top: 0.7rem;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  line-height: 1.8;
+  color: var(--clr-neutral-400);
+}
+
+.subscription {
+  background-color: var(--clr-primary-600);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price span {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 75%;
+}
+
+.price-info {
+  margin-top: 0.5rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.875rem;
+  padding: 1rem;
+  background-color: var(--clr-accent);
+  border: none;
+  border-radius: 0.313rem;
+  box-shadow: 0 0.625rem 1.25rem var(--clr-shadow-button);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+}
+
+.button:focus-visible, .button:hover {
+  filter: brightness(1.05);
+}
+
+.why-us {
+  background-color: var(--clr-primary-500);
+}
+
+.why-us-list {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  list-style: none;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .card-container {
+    display: grid;
+    grid-template-areas: 
+    "header header" 
+    "subscription why-us";
+    grid-auto-columns: minmax(0, 1fr);
+    max-width: 39.688rem;
+  }
+  
+  .card {
+    padding: 2.5rem;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  .subscription {
+    grid-area: subscription;
+  }
+  
+  .why-us {
+    grid-area: why-us;
+  }
+}
