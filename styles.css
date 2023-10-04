@@ -8,7 +8,7 @@
   --clr-neutral-200: hsl(204, 43%, 93%);
   --clr-neutral-400: hsl(218, 22%, 67%);
   
-  --clr-shadow: hsla(218, 22%, 67%, 30%);
+  --clr-shadow-card: hsla(218, 22%, 67%, 30%);
   --clr-shadow-button: hsla(0, 0%, 0%, 15%);
 }
 
@@ -43,7 +43,7 @@ h2 {
   overflow: hidden;
   background-color: var(--clr-neutral-100);
   border-radius: 0.5rem;
-  box-shadow: 0 1.25rem 1.25rem var(--clr-shadow);
+  box-shadow: 0 1.25rem 1.25rem var(--clr-shadow-card);
 }
 
 .card {
@@ -124,9 +124,9 @@ h2 {
   .card-container {
     display: grid;
     grid-template-areas: 
-    "header header" 
-    "subscription why-us";
-    grid-auto-columns: minmax(0, 1fr);
+    "card-1 card-1" 
+    "card-2 card-3";
+    grid-auto-columns: minmax(auto, 1fr);
     max-width: 39.688rem;
   }
   
@@ -135,14 +135,14 @@ h2 {
   }
   
   .header {
-    grid-area: header;
+    grid-area: card-1;
   }
   
   .subscription {
-    grid-area: subscription;
+    grid-area: card-2;
   }
   
   .why-us {
-    grid-area: why-us;
+    grid-area: card-3;
   }
 }
